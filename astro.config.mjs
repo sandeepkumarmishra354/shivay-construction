@@ -7,5 +7,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [react()],
   site: "https://sandeepkumarmishra354.github.io",
-  base: "/shivay-construction"
+  // base: "/shivay-construction"
 });
