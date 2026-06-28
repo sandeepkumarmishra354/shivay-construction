@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <a href="/" className="logo">
+        <a href="/shivay-construction" className="logo">
           <svg viewBox="0 0 24 24" className="logo-icon">
             {/* Custom abstract railway construction logo */}
             <path d="M2 17h20v2H2zm2-2l2-5h12l2 5zm8-10L6 10h12z" fill="var(--accent)" />
@@ -72,7 +72,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="/contact"
+              href="/shivay-construction/contact"
               className="btn btn-primary mobile-nav-cta"
               onClick={() => setIsMenuOpen(false)}
             >
