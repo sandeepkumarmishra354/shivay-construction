@@ -17,11 +17,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Home', path: '/shivay-construction' },
+    { name: 'About Us', path: '/shivay-construction/about' },
+    { name: 'Services', path: '/shivay-construction/services' },
+    { name: 'Projects', path: '/shivay-construction/projects' },
+    { name: 'Contact', path: '/shivay-construction/contact' }
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Header() {
               {link.name}
             </a>
           ))}
-          <a href="/contact" className="btn btn-primary nav-cta">
+          <a href="/shivay-construction/contact" className="btn btn-primary nav-cta">
             Tender Inquiry
           </a>
         </nav>
