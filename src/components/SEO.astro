@@ -1,0 +1,77 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string | URL;
+  type?: string;
+}
+
+const {
+  title = "Shivay Construction Company | Railway Tenders & Infrastructure EPC",
+  description = "Shivay Construction Company is a premier EPC contractor specializing in railway tenders, OHE electrification, civil bridge construction, track linking, and signaling projects.",
+  image = "/og-image.jpg",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin),
+  type = "website",
+} = Astro.props;
+
+const siteName = "Shivay Construction Company";
+const formattedTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+
+// Structured JSON-LD Data for local railway construction contractor SEO
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "Shivay Construction Company",
+  "alternateName": "Shivay Construction",
+  "description": "Specialized railway contractor in India executing tenders for OHE electrification, civil formations, track linking, and station building.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Shivay Construction Company",
+    "image": image,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sector 62, Noida",
+      "addressLocality": "Gautam Buddha Nagar",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201301",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91-9876543210",
+    "priceRange": "$$$"
+  },
+  "serviceType": "Railway Infrastructure EPC",
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  }
+};
+---
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{formattedTitle}</title>
+<meta name="title" content={formattedTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content="Shivay Construction, Railway Tenders, Indian Railways, OHE Electrification, Track Linking, Railway Bridges, Civil Infrastructure, EPC Contractor" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={formattedTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url.origin)} />
+<meta property="og:site_name" content={siteName} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={formattedTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url.origin)} />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />

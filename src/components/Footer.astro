@@ -1,0 +1,211 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand-section">
+      <a href="/" class="footer-logo">
+        <svg viewBox="0 0 24 24" class="logo-icon">
+          <path d="M2 17h20v2H2zm2-2l2-5h12l2 5zm8-10L6 10h12z" fill="var(--accent)" />
+        </svg>
+        <span class="logo-text">SHIVAY <span class="logo-subtext">CONSTRUCTION</span></span>
+      </a>
+      <p class="footer-desc">
+        A premier Class-A infrastructure contractor delivering state-of-the-art railway engineering and EPC solutions for national transit systems.
+      </p>
+      <div class="certifications">
+        <span class="cert-badge">ISO 9001:2015</span>
+        <span class="cert-badge">RDSO Approved</span>
+        <span class="cert-badge">Class-A Registered</span>
+      </div>
+    </div>
+
+    <div class="footer-links-section">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/projects">Projects & Tenders</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links-section">
+      <h4 class="footer-heading">Our Specialties</h4>
+      <ul class="footer-links">
+        <li><a href="/services#electrification">Railway Electrification (OHE)</a></li>
+        <li><a href="/services#track">Track Laying & Rehabilitation</a></li>
+        <li><a href="/services#civil">Bridges & Civil Infrastructures</a></li>
+        <li><a href="/services#telecom">Signaling & Telecommunication</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact-section">
+      <h4 class="footer-heading">Corporate Office</h4>
+      <p class="contact-info">
+        <strong>Address:</strong> Shivay Tower, Plot No. 44, Sector 62, Noida, Uttar Pradesh, Pin - 201301
+      </p>
+      <p class="contact-info">
+        <strong>Tenders Dept:</strong> +91-9876543210
+      </p>
+      <p class="contact-info">
+        <strong>Email:</strong> tenders@shivayconstruction.co.in
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-flex">
+      <p class="copyright">&copy; {currentYear} Shivay Construction Company. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #080c14;
+    border-top: 1px solid var(--border-dark);
+    padding: 5rem 0 0 0;
+    color: var(--text-light-muted);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1.8fr;
+    gap: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-text {
+    letter-spacing: 1px;
+  }
+
+  .logo-subtext {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .footer-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .certifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cert-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: 600;
+    color: var(--amber);
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .footer-heading::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent);
+    margin-top: 0.5rem;
+  }
+
+  .footer-links {
+    list-style: none;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links a {
+    color: var(--text-light-muted);
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+  }
+
+  .contact-info {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-legal a {
+    transition: color var(--transition-fast);
+  }
+
+  .footer-legal a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-bottom-flex {
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: center;
+    }
+  }
+</style>
